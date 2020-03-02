@@ -176,7 +176,7 @@ public class LevelCreator : MonoBehaviour
                 if (previousNode != curNode) {
                     if (paintTile) {
                         int matId = ResourceManager.GetInstance().GetMaterialId(matToPlace);
-                        //curNode.vis.GetComponent<NodeObject>().textureid = matId;
+                        curNode.vis.GetComponent<NodeObject>().textureid = matId;
                         paintTile = false;
                     } else {
                         previousNode.tileRenderer.material = prevMaterial;
@@ -209,7 +209,7 @@ public class LevelCreator : MonoBehaviour
             for (int z = 0; z < gridBase.sizeZ; z++) {
                 gridBase.grid[x, z].tileRenderer.material = matToPlace;
                 int matId = ResourceManager.GetInstance().GetMaterialId(matToPlace);
-                //gridBase.grid[x, z].vis.GetComponent<NodeObject>().textureid = matId;
+                gridBase.grid[x, z].vis.GetComponent<NodeObject>().textureid = matId;
             }
         }
         previousNode = null;

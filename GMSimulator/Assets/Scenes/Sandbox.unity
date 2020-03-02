@@ -247,8 +247,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodePrefab: {fileID: 7539693519235412652, guid: c5198ded7985f38489b639044232fa7c,
     type: 3}
-  sizeX: 20
-  sizeZ: 20
+  sizeX: 10
+  sizeZ: 10
   offset: 1
 --- !u!4 &191210667
 Transform:
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6898f77c3566f4084a1c31527f35dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  matToPlace: {fileID: 0}
+  matToPlace: {fileID: 2100000, guid: 0cc192ab7f73fcd45befe7c501426515, type: 2}
 --- !u!114 &191210670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,13 +758,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795980585}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 10, y: 15, z: -10}
+  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
+  m_LocalPosition: {x: 4, y: 6, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
 --- !u!1 &1897794732
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,6 +814,5 @@ MonoBehaviour:
       type: 3}
   LevelGameObjectsStacked: []
   LevelMaterials:
-  - {fileID: 2100000, guid: d17950eb24f617444ba3a96b8ce53c9b, type: 2}
   - {fileID: 2100000, guid: e3161d9adf2b61d48a0d480ca6becebd, type: 2}
   wallPrefab: {fileID: 0}
