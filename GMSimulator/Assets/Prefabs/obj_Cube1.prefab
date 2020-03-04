@@ -41,10 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3657992126738100827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3707f97a6ecdf234c8dc7722396ad673, type: 3}
+  m_Script: {fileID: 11500000, guid: b8dfa23cccf545340b1fa623bb4a9dc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj_Id: obj_Cube1
+  obj_Id: 
   gridPosX: 0
   gridPosZ: 0
   modelVisualization: {fileID: 0}

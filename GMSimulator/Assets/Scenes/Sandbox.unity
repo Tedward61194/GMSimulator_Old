@@ -291,7 +291,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6898f77c3566f4084a1c31527f35dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  matToPlace: {fileID: 2100000, guid: 0cc192ab7f73fcd45befe7c501426515, type: 2}
+  matToPlace: {fileID: 2100000, guid: 020b997e4fa23c74297e208cd649319c, type: 2}
+  wallPrefab: {fileID: 6623619579214609325, guid: fd8a90c6bb442e246b5edfeb00237678,
+    type: 3}
 --- !u!114 &191210670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,7 +424,37 @@ PrefabInstance:
     - target: {fileID: 2749512707370769536, guid: 3a84710c4fc686c4a84ac7b1905bb19a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903273238436375938, guid: 3a84710c4fc686c4a84ac7b1905bb19a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903273238436375938, guid: 3a84710c4fc686c4a84ac7b1905bb19a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903273238436375938, guid: 3a84710c4fc686c4a84ac7b1905bb19a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903273238436375938, guid: 3a84710c4fc686c4a84ac7b1905bb19a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 191210669}
+    - target: {fileID: 2903273238436375938, guid: 3a84710c4fc686c4a84ac7b1905bb19a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenWallCreation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903273238436375938, guid: 3a84710c4fc686c4a84ac7b1905bb19a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7286615618460829371, guid: 3a84710c4fc686c4a84ac7b1905bb19a,
         type: 3}
@@ -815,4 +847,5 @@ MonoBehaviour:
   LevelGameObjectsStacked: []
   LevelMaterials:
   - {fileID: 2100000, guid: e3161d9adf2b61d48a0d480ca6becebd, type: 2}
-  wallPrefab: {fileID: 0}
+  wallPrefab: {fileID: 6623619579214609325, guid: fd8a90c6bb442e246b5edfeb00237678,
+    type: 3}
