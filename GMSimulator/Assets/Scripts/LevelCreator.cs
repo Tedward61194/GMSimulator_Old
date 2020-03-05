@@ -283,10 +283,12 @@ public class LevelCreator : MonoBehaviour
             if(startNodeWall == null) {
                 if (Input.GetMouseButtonUp(0) && ! ui.mouseOverUIElement) {
                     startNodeWall = curNode;
+                    Debug.Log("StartNode: " + curNode.nodePosX + "," + curNode.nodePosZ);
                 }
             } else {
                 if (Input.GetMouseButtonUp(0) && !ui.mouseOverUIElement) {
                     endNodeWall = curNode;
+                    Debug.Log("EndNode: " + curNode.nodePosX + "," + curNode.nodePosZ);
                 }
             }
 
@@ -294,7 +296,7 @@ public class LevelCreator : MonoBehaviour
                 int difX = endNodeWall.nodePosX - startNodeWall.nodePosX;
                 int difZ = endNodeWall.nodePosZ - startNodeWall.nodePosZ;
 
-                CreateWallInNode(startNodeWall.nodePosX, startNodeWall.nodePosZ, LevelWallObj.WallDirection.ab);
+                CreateWallInNode(startNodeWall.nodePosX, startNodeWall.nodePosZ, LevelWallObj.WallDirection.bc);
 
                 Node finalXNode = null;
                 Node finalZNode = null;
@@ -393,7 +395,7 @@ public class LevelCreator : MonoBehaviour
 
                         CreateWallInNode(posX, posZ, targetDir);
                     }
-
+/*
                     // Corners for boxes, check if ab/bc are all switched
                     if (startNodeWall.nodePosZ > endNodeWall.nodePosZ) {
                         manager.inSceneWalls.Remove(finalXNode.wallObj.gameObject);
@@ -456,7 +458,7 @@ public class LevelCreator : MonoBehaviour
                             Node nextToEndNode = DestroyCurrentNodeAndGetPrevious(endNodeWall, true);
                             UpdateWallCorners(nextToEndNode, true, false, false);
                         }
-                    }
+                    }*/
                 }
 
                 startNodeWall = null;
