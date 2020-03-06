@@ -70,6 +70,7 @@ public class LevelCreator : MonoBehaviour
         }
     }
 
+    #region Objects
     public void PassGameObjectToPlace(string objId) {
         if (cloneObj != null) {
             Destroy(cloneObj);
@@ -208,7 +209,9 @@ public class LevelCreator : MonoBehaviour
         CloseAll();
         deleteStackObj = true;
     }
+    #endregion
 
+    #region Materials
     public void PassMaterialToPaint(int matId) {
         deleteObj = false;
         placeStackObj = false;
@@ -268,7 +271,9 @@ public class LevelCreator : MonoBehaviour
         }
         previousNode = null;
     }
+    #endregion
 
+    #region Walls
     public void OpenWallCreation() {
         CloseAll();
         createWall = true;
@@ -296,7 +301,7 @@ public class LevelCreator : MonoBehaviour
                 int difX = endNodeWall.nodePosX - startNodeWall.nodePosX;
                 int difZ = endNodeWall.nodePosZ - startNodeWall.nodePosZ;
 
-                CreateWallInNode(startNodeWall.nodePosX, startNodeWall.nodePosZ, LevelWallObj.WallDirection.bc);
+                CreateWallInNode(startNodeWall.nodePosX, startNodeWall.nodePosZ, difX != 0 ? LevelWallObj.WallDirection.bc : LevelWallObj.WallDirection.ab);
 
                 Node finalXNode = null;
                 Node finalZNode = null;
@@ -324,8 +329,8 @@ public class LevelCreator : MonoBehaviour
                         CreateWallInNode(posX, posZ, targetDir);
                     }
 
-                    UpdateWallCorners(xHigher ? startNodeWall : endNodeWall, true, false, false);
-                    UpdateWallCorners(xHigher ? endNodeWall : startNodeWall, false, true, false); //Handle dragging from right to left
+                    UpdateWallCorners(xHigher ? startNodeWall : endNodeWall, false, true, false);
+                    UpdateWallCorners(xHigher ? endNodeWall : startNodeWall, false, false, true);
                 }
 
                 if (difZ != 0) {
@@ -352,7 +357,7 @@ public class LevelCreator : MonoBehaviour
                     }
 
                     UpdateWallCorners(zHigher ? startNodeWall : finalZNode, false, true, false);
-                    UpdateWallCorners(zHigher ? finalZNode : startNodeWall, false, false, true);
+                    UpdateWallCorners(zHigher ? finalZNode : startNodeWall, true, false, false);
                 }
 
                 if (difX != 0 && difZ != 0) {
@@ -395,7 +400,7 @@ public class LevelCreator : MonoBehaviour
 
                         CreateWallInNode(posX, posZ, targetDir);
                     }
-/*
+
                     // Corners for boxes, check if ab/bc are all switched
                     if (startNodeWall.nodePosZ > endNodeWall.nodePosZ) {
                         manager.inSceneWalls.Remove(finalXNode.wallObj.gameObject);
@@ -414,13 +419,13 @@ public class LevelCreator : MonoBehaviour
                             UpdateWallCorners(finalZNode, false, true, false);
 
                             Node nextToStartNode = DestroyCurrentNodeAndGetPrevious(startNodeWall, true);
-                            UpdateWallCorners(nextToStartNode, true, false, false);
+                            UpdateWallCorners(nextToStartNode, false, false, true);
 
                             CreateWallOrUpdateNode(endNodeWall, LevelWallObj.WallDirection.all);
                             UpdateWallCorners(endNodeWall, false, true, false);
                         } else {
                             Node beforeFinalX = DestroyCurrentNodeAndGetPrevious(finalXNode, true);
-                            UpdateWallCorners(beforeFinalX, true, false, false);
+                            UpdateWallCorners(beforeFinalX, false, false, true);
 
                             CreateWallOrUpdateNode(finalZNode, LevelWallObj.WallDirection.all);
                             UpdateWallCorners(finalZNode, false, true, false);
@@ -435,7 +440,7 @@ public class LevelCreator : MonoBehaviour
                     } else {
                         if (startNodeWall.nodePosX > endNodeWall.nodePosX) {
                             Node northWestNode = DestroyCurrentNodeAndGetPrevious(finalZNode, true);
-                            UpdateWallCorners(northWestNode, true, false, false);
+                            UpdateWallCorners(northWestNode, false, false, true);
 
                             CreateWallOrUpdateNode(finalXNode, LevelWallObj.WallDirection.all);
                             UpdateWallCorners(finalXNode, false, true, false);
@@ -456,9 +461,9 @@ public class LevelCreator : MonoBehaviour
                             UpdateWallCorners(startNodeWall, false, true, false);
 
                             Node nextToEndNode = DestroyCurrentNodeAndGetPrevious(endNodeWall, true);
-                            UpdateWallCorners(nextToEndNode, true, false, false);
+                            UpdateWallCorners(nextToEndNode, false, false, true);
                         }
-                    }*/
+                    }
                 }
 
                 startNodeWall = null;
@@ -541,6 +546,7 @@ public class LevelCreator : MonoBehaviour
             }
         }
     }
+    #endregion
 
     private void CloseAll() {
         hasObj = false;
