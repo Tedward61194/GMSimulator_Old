@@ -10,5 +10,5 @@ public class Node {
     public bool isWalkable;
     public LevelObject placedObj;
     public List<LevelObject> stackedObjs = new List<LevelObject>();
-    public /*WallObj*/LevelWallObj wallObj;
+    public LevelWallObj wallObj;
 }

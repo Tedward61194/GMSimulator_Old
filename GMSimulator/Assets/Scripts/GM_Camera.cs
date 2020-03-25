@@ -9,9 +9,15 @@ float mainSpeed = 5.0f; //regular speed
     float camSens = 0.25f; //How sensitive it with mouse
     private Vector3 lastMouse = new Vector3(255, 255, 255); //kind of in the middle of the screen, rather than at the top (play)
     private float totalRun= 1.0f;
+    bool freeMove = false;
      
     void Update () {
-        if (Input.GetMouseButton(1)) {
+        if (Input.GetMouseButtonDown(1)) {
+            freeMove = true;
+        } else if (Input.GetMouseButtonUp(1)) {
+            freeMove = false;
+        }
+        if (freeMove) {
             lastMouse = Input.mousePosition - lastMouse;
             lastMouse = new Vector3(-lastMouse.y * camSens, lastMouse.x * camSens, 0);
             lastMouse = new Vector3(transform.eulerAngles.x + lastMouse.x, transform.eulerAngles.y + lastMouse.y, 0);
@@ -21,7 +27,6 @@ float mainSpeed = 5.0f; //regular speed
         //Mouse  camera angle done.  
        
         //Keyboard commands
-        float f = 0.0f;
         Vector3 p = GetBaseInput();
         if (Input.GetKey (KeyCode.LeftShift)) {
             totalRun += Time.deltaTime;
@@ -36,7 +41,7 @@ float mainSpeed = 5.0f; //regular speed
        
         p = p * Time.deltaTime;
        Vector3 newPosition = transform.position;
-        if (Input.GetKey(KeyCode.Space)){
+        if (freeMove){
             transform.Translate(p); // Local transform
         }
         else { // Global Transform

@@ -44,16 +44,16 @@ public class LevelObject : MonoBehaviour
 
         return savedObj;
     }
+}
 
-    [System.Serializable]
-    public class SaveableLevelObject {
-        public string objId;
-        public int posX;
-        public int posZ;
-        public float rotX;
-        public float rotY;
-        public float rotZ;
-        public bool isWallObject = false;
-        public bool isStackable = false;
-    }
+[System.Serializable]
+public class SaveableLevelObject {
+    public string objId;
+    public int posX;
+    public int posZ;
+    public float rotX;
+    public float rotY;
+    public float rotZ;
+    public bool isWallObject = false;
+    public bool isStackable = false;
 }

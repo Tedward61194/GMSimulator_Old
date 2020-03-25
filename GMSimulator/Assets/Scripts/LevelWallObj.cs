@@ -66,7 +66,7 @@ public class LevelWallObj : MonoBehaviour
 
     [Serializable]
     public class WallObjectSaveableProperties {
-        public LevelWallObj.WallDirection direction;
+        public WallDirection direction;
         public bool cornerA;
         public bool cornerB;
         public bool cornerC;

@@ -36,9 +36,9 @@ public class GridBase : MonoBehaviour
                 go.transform.parent = transform.GetChild(1).transform;
 
                 //Used for Serialization
-                //NodeObject nodeObj = go.GetComponent<NodeObject>();
-                //nodeObj.posX = x;
-                //nodeObj.posZ = z;
+                NodeObject nodeObj = go.GetComponent<NodeObject>();
+                nodeObj.posX = x;
+                nodeObj.posZ = z;
 
                 Node node = new Node();
                 node.vis = go;
@@ -67,9 +67,6 @@ public class GridBase : MonoBehaviour
 
         int x = Mathf.RoundToInt(worldX);
         int z = Mathf.RoundToInt(worldZ);
-
-        //int x = Mathf.FloorToInt(worldX);
-        //int z = Mathf.FloorToInt(worldZ);
 
         if (x >= sizeX)
             x = sizeX-1;

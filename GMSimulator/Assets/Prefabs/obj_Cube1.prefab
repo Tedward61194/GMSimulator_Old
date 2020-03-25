@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8dfa23cccf545340b1fa623bb4a9dc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj_Id: 
+  obj_Id: obj_Cube1
   gridPosX: 0
   gridPosZ: 0
   modelVisualization: {fileID: 0}
